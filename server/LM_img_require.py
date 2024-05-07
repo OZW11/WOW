@@ -75,7 +75,7 @@ def askVivo_for_img(img_message,APP_ID,APP_KEY):
     if(require['code']==200):
         #这里不用设置请求次数避免死循环，查询超限后会自动break
         while True:
-            time.sleep(1)
+            time.sleep(1.5)
             get_result = progress(require['result']['task_id'],APP_ID,APP_KEY)
             if(get_result['result']['finished'] == True):
                 print(get_result['result']['images_url'])
